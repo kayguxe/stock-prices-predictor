@@ -37,19 +37,36 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <h1><span class="brand-heading">$</span>tock<span class="brand-heading">AI</span></h1>
-          <p class="intro-text">Let AI predict your stock.</p>
+<!-- TradingView Widget BEGIN -->
+<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+<script type="text/javascript">
+new TradingView.widget({
+  "width": 960,
+  "height": 610,
+  "symbol": "NASDAQ:{{stock_name}}",
+  "interval": "D",
+  "timezone": "Etc/UTC",
+  "theme": "White",
+  "style": "1",
+  "locale": "en",
+  "toolbar_bg": "#f1f3f6",
+  "enable_publishing": false,
+  "allow_symbol_change": true,
+  "hideideas": true
+});
+</script>
+<!-- TradingView Widget END -->
+
+
+
+
 <div class="row">
-  <div class="col-md-4"><h3><span class="brand">The stock</span></h3></div>
-  <div class="col-md-4"><h3><span class="brand">the sentiment of {{stock_name}}</span></h3></div>
+  <div class="col-md-4"><h3><span class="brand">The stock</span></h3><h3><span class="brand-heading">{{stock_name}}</span></h3></div>
+  <div class="col-md-4"><h3><span class="brand">the sentiment of {{stock_name}}</span></h3><h3><span class="brand-heading">{{query}}</span></h3></div>
   <!-- Optional: clear the XS cols if their content doesn't match in height -->
-  <div class="col-md-4"><h3><span class="brand">Our Prediction</span></h3></div>
+  <div class="col-md-4"><h3><span class="brand">Our Prediction</span></h3> <h3><span class="brand-heading">{{stock}}</span></h3></div>
   </div>
-  <div class="row">
-    <div class="col-md-4"><h3><span class="brand-heading">{{stock_name}}</span></h3></div>
-      <div class="col-md-4"><h3><span class="brand-heading">{{query}}</span></h3></div>
-        <div class="col-md-4"><h3><span class="brand-heading">{{stock}}</span></h3></div>
-</div>
+
 <div class="row">
 </div>
 </div>
@@ -60,12 +77,6 @@
 </div>
 
 </div>
-<div id="intro">
-  <div class="intro-body">
-    <div class="container">
- <p>Nothing on this website is to be taken as an investment advice. This website and all of its contents are for educational use only.</p>
-</div>
-</div>
-</div>
+
 </body>
 </html>
